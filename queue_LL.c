@@ -1,3 +1,4 @@
+// Online C compiler to run C program online
 #include <stdio.h> 
 #include <stdlib.h> 
 struct node{
@@ -36,9 +37,22 @@ int deque(){
 
 
 }
+
+
+void disp(){
+    struct node* temp=front;
+    while(temp!=NULL){
+        printf("%d  ",temp->val);
+        temp=temp->next;
+    }
+}
 int main(){
     enque(10);
     enque(12);
-    printf("%d\n",front->val);
-    printf("%d\n",front->next->val);
+    enque(172);
+    enque(172);
+    enque(13);
+    enque(14);
+   deque();
+   disp();
 }
