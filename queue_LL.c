@@ -1,4 +1,4 @@
-// Online C compiler to run C program online
+
 #include <stdio.h> 
 #include <stdlib.h> 
 struct node{
@@ -55,5 +55,5 @@ int main(){
     enque(14);
    deque();
    disp();
-   dadddyyyyyyyyyyyyyyyyyyy
+
 }
