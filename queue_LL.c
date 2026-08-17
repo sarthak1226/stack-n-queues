@@ -55,4 +55,5 @@ int main(){
     enque(14);
    deque();
    disp();
+   dadddyyyyyyyyyyyyyyyyyyy
 }
