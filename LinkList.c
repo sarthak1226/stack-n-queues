@@ -1,19 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(){
+
     struct node{
         int value;
         struct node* nextnode;
     }
 
     struct node *head=NULL;
+    struct node *first = NULL;
 
     void push(int val){
         struct node *newnode;
         newnode=(struct node*)malloc(sizeof(struct node));
         newnode->value=val;
-        newnode->nextnode=head;
-        head=newnode;
+        if(head==NULL){
+            newnode->nextnode=head;
+            first=newnode;
+        }
 
     }
 
@@ -31,8 +34,26 @@ int main(){
 
     free(temp);
 
-}void display()
-{
+}
+
+void pushBegin(int val){
+    struct node *newnode;
+    newnode=(struct node*)malloc(sizeof(struct node));
+     newnode->value=val;
+     newnode->nextnode=first;
+     first=newnode;  
+}
+
+int popbegin(){
+    struct node *temp;
+    temp=first;
+    first->nextnode=first;
+    free(temp);
+
+}
+
+
+void display(){
     struct node *temp = head;
 
     while (temp != NULL) {
@@ -42,6 +63,8 @@ int main(){
 
     printf("\n");
 }
+
+
 
 int main()
 {
@@ -55,4 +78,5 @@ int main()
     display();
 
     pop();
-    display();}
+    display();
+}
